@@ -35,7 +35,7 @@ function special_keytype() {
         // get response
         post_ajax_call("/api/ajax/post_do_command", command).then((result) => {
             console.log(result);
-            type_elm.innerHTML += "<br>" + result;
+            type_elm.innerHTML += result + "<br>";
             console.log(type_elm.innerHTML);
 
             // scroll bottom
@@ -49,11 +49,12 @@ function special_keytype() {
             pre_prompt_text = result;
 
             // create element
-            var new_now_line = document.createElement("p");
+            var new_now_line = document.createElement("span");
             new_now_line.id = "now_line";
             new_now_line.innerHTML = pre_prompt_layout.replace(/\#\#\#/g, pre_prompt_text);
 
             // add element
+            type_elm.innerHTML += "<br>";
             type_elm.parentNode.insertBefore(new_now_line, type_elm.nextSibling);
 
             // remove element

@@ -31,6 +31,12 @@ a {
 
 #cursor {
     color: deeppink;
+    animation: flash 1s infinite;
+}
+@keyframes flash {
+    50% {
+        opacity: 0;
+    }
 }
 
 #bottom {

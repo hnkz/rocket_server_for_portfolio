@@ -25,7 +25,7 @@
     <p class="normal_desc">Hello, {{user}}! This website is hnkz's portfolio. Various gimmicks are prepared. Enjoy your time here !</p>
     <p class="normal_desc">You can use GNU bash commands and so on. For details, please type "cat help.txt".</p>
     <p class="normal_desc">This web site is only for PC browser. Sorry smartphone users...</p>
-    <p id="now_line"></p>
+    <span id="now_line"></span><span id="cursor">_</span>
     <div id="bottom"></div>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/ajax.js"></script>
