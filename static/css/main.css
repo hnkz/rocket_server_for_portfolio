@@ -12,12 +12,12 @@ body {
     color: #fff;
 }
 
-table {
-	border-collapse: collapse;
+ul {
+
 }
-td {
-	border: solid 1px;
-	padding: 0.5em;
+
+a {
+    color: #ff4444;
 }
 
 #title {

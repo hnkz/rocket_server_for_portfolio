@@ -1,6 +1,6 @@
 body {
     animation: fadeIn 2.5s ease 0s 1 normal;
-    -webkit-animation: fadeIn 2.5s ease 0s 1 normal;
+    -webkit-animation: fadeIn 7s ease 0s 1 normal;
 }
 @keyframes fadeIn {
     0% {opacity: 0}

@@ -1,5 +1,0 @@
-<h2>HELP</h2>
-* ls
-* cat
-* pwd
-* whoami

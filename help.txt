@@ -1,0 +1,11 @@
+<h2>HELP</h2>
+
+<h3>commands</h3>
+* ls        ... List directory contents
+* cat       ... Concatenate files and print on the standard output
+* pwd       ... Print name of current/working directory
+* whoami    ... Print effective userid
+
+<h3>files</h3>
+* help.txt ... If you are in trouble, please type "cat help.txt"...
+* self_introduction.txt ... hnkz's introduction.

@@ -1,0 +1,12 @@
+<h2>はなかず</h2>
+<b>年齢</b>：１９歳
+<b>職業</b>：静岡大学情報科学科２年生
+<b>趣味</b>：パソコン、読書、映画、音楽、すのぼ
+<b>言語</b>：日本語、英語、C、PHP、Java、JS、Rust、Haskell
+
+<b>リンク</b>
+<ul>
+    <li><a href="https://github.com/hnkz" target="_blank">github</a></li>
+    <li><a href="https://qiita.com/hnkz" target="_blank">qiita</a></li>
+    <li><a href="http://hnkz.hatenablog.jp/" target="_blank">はてな</a></li>
+</ul>
