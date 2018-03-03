@@ -1,0 +1,6 @@
+[development]
+address = "192.168.33.34"
+port = 8000
+
+[global]
+template_dir = "static"

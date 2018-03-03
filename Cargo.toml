@@ -1,0 +1,14 @@
+[package]
+name = "rocket_test02"
+version = "0.1.0"
+authors = ["vagrant"]
+
+[dependencies]
+rocket = "0.3.6"
+rocket_codegen = "0.3.6"
+time = "*"
+
+[dependencies.rocket_contrib]
+version = "*"
+default-features = false
+features = ["tera_templates"]
