@@ -12,6 +12,14 @@ body {
     color: #fff;
 }
 
+table {
+	border-collapse: collapse;
+}
+td {
+	border: solid 1px;
+	padding: 0.5em;
+}
+
 #title {
     /*text-align: center;*/
     color: aquamarine;
