@@ -71,13 +71,14 @@ fn main() {
 
 fn do_command(cmd: &str) -> String {
 
+    if cmd == "" {
+        return "".to_string();
+    }
+
     // 文字列処理
     let mut cmd_split = cmd.split_whitespace();
 
-    let program = match cmd_split.next() {
-        Some(val) => val,
-        None => "help"
-    };
+    let program = cmd_split.next().unwrap();
 
     let mut processer = Command::new(program);
 
