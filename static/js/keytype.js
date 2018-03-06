@@ -35,17 +35,14 @@ function special_keytype() {
         // get response
         post_ajax_call("/api/ajax/post_do_command", command).then((result) => {
             console.log(result);
-            type_elm.innerHTML += result + "<br>";
+            type_elm.innerHTML += "<br>" + result;
             console.log(type_elm.innerHTML);
 
             // scroll bottom
             bottom.scrollIntoView(true);
+            return post_ajax_call("/api/ajax/post_pre_prompt", "");
         })
-        .catch((err) => {
-            console.log("error: " + err);
-        })
-
-        post_ajax_call("/api/ajax/post_pre_prompt", "").then((result) => {
+        .then((result) => {
             pre_prompt_text = result;
 
             // create element
@@ -54,7 +51,6 @@ function special_keytype() {
             new_now_line.innerHTML = pre_prompt_layout.replace(/\#\#\#/g, pre_prompt_text);
 
             // add element
-            type_elm.innerHTML += "<br>";
             type_elm.parentNode.insertBefore(new_now_line, type_elm.nextSibling);
 
             // remove element
