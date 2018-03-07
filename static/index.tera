@@ -27,9 +27,9 @@
     <p class="normal_desc">This web site is only for PC browser. Sorry smartphone users...</p>
     <span id="now_line"></span><span id="cursor">_</span>
     <div id="bottom"></div>
-    <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/ajax.js"></script>
     <script type="text/javascript" src="js/keytype.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>
