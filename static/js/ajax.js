@@ -6,7 +6,7 @@ function post_ajax_call(url, data) {
 
     return new Promise((resolve) => {
         xhr.onreadystatechange = function() {
-            if(xhr.readyState == 4 && xhr.status == 200) {
+            if (xhr.readyState == 4 && xhr.status == 200) {
                 resolve(xhr.responseText);
             }
         }

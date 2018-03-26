@@ -1,8 +1,8 @@
 "use strict";
 
-var type_id = "now_line";
-var type_elm;
-var keycode;
+let type_id = "now_line";
+let type_elm;
+let keycode;
 
 document.onkeypress = keytype;
 document.onkeydown = special_keytype;
@@ -48,7 +48,7 @@ function special_keytype(event) {
 
         // enter
     } else if (keycode == 13) {
-        var command = type_elm.innerHTML.replace(/.*\$ /g, "");
+        let command = type_elm.innerHTML.replace(/.*\$ /g, "");
 
         // get response
         post_ajax_call("/api/ajax/post_do_command", command).then((result) => {
@@ -82,7 +82,7 @@ function special_keytype(event) {
 }
 
 function get_browser() {
-    var userAgent = window.navigator.userAgent;
+    let userAgent = window.navigator.userAgent;
 
     // key type
     console.log(userAgent);
