@@ -5,10 +5,12 @@ extern crate rocket;
 extern crate rocket_contrib;
 extern crate time;
 
+mod static_files;
+mod command;
+
 use std::collections::HashMap;
 use std::process::Command;
 use rocket_contrib::Template;
-mod static_files;
 
 #[get("/<name>")]
 fn index(name: String) -> Template {
@@ -50,26 +52,29 @@ fn post_pre_prompt() -> String {
 fn post_do_command(cmd: String) -> String {
     println!("cmd is {}", cmd);
 
-    let mut res = do_command(&cmd);
+    let mut res = exec(&cmd);
     res = res.replace("\n", "<br>");
 
     res
 }
 
 fn main() {
-    rocket::ignite()
-        .attach(Template::fairing())
-        .mount("/", routes![
-            index,
-            index2,
-            post_pre_prompt,
-            post_do_command,
-            static_files::all,
-        ])
-        .launch();
+    // rocket::ignite()
+    //     .attach(Template::fairing())
+    //     .mount("/", routes![
+    //         index,
+    //         index2,
+    //         post_pre_prompt,
+    //         post_do_command,
+    //         static_files::all,
+    //     ])
+    //     .launch();
+
+    println!("{}", exec("while (( i < 100 )); do echo $((i+=1)); done"));
+
 }
 
-fn do_command(cmd: &str) -> String {
+fn exec(cmd: &str) -> String {
 
     if cmd == "" {
         return "".to_string();
@@ -80,14 +85,10 @@ fn do_command(cmd: &str) -> String {
 
     let program = cmd_split.next().unwrap();
 
-    let mut processer = Command::new(program);
-
-    for arg in cmd_split {
-        println!("{}", arg);
-        processer.arg(arg);
-    }
-
-    let result = processer.output();
+    let result = Command::new("rbash")
+                            .arg("-c")
+                            .arg(cmd)
+                            .output();
 
     match result {
         Ok(val) => {
