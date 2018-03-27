@@ -48,7 +48,7 @@ fn post_pre_prompt() -> String {
 }
 
 #[post("/api/ajax/post_do_command", data="<cmd>")]
-fn post_do_command(cmd: String) -> String {
+fn post_exec(cmd: String) -> String {
     println!("cmd is {}", cmd);
 
     let mut res = exec(&cmd);
@@ -64,7 +64,7 @@ fn main() {
             index,
             index2,
             post_pre_prompt,
-            post_do_command,
+            post_exec,
             static_files::all,
         ])
         .launch();
