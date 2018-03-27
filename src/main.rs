@@ -81,7 +81,7 @@ fn exec(cmd: &str) -> String {
 
     let program = cmd_split.next().unwrap();
 
-    let result = Command::new("rbash")
+    let result = Command::new("bash")
                             .arg("-c")
                             .arg(cmd)
                             .output();
