@@ -80,9 +80,14 @@ fn exec(cmd: &str) -> String {
                             .arg(cmd)
                             .output();
 
+    println!("{:?}", result);
     match result {
         Ok(val) => {
-            String::from_utf8_lossy(&val.stdout).to_string()
+            if val.stdout.len() != 0 {
+                String::from_utf8_lossy(&val.stdout).to_string()
+            } else {
+                String::from_utf8_lossy(&val.stderr).to_string()
+            }
         },
         Err(err) => {
             err.to_string()
