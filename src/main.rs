@@ -6,7 +6,6 @@ extern crate rocket_contrib;
 extern crate time;
 
 mod static_files;
-mod command;
 
 use std::collections::HashMap;
 use std::process::Command;
@@ -59,19 +58,16 @@ fn post_do_command(cmd: String) -> String {
 }
 
 fn main() {
-    // rocket::ignite()
-    //     .attach(Template::fairing())
-    //     .mount("/", routes![
-    //         index,
-    //         index2,
-    //         post_pre_prompt,
-    //         post_do_command,
-    //         static_files::all,
-    //     ])
-    //     .launch();
-
-    println!("{}", exec("while (( i < 100 )); do echo $((i+=1)); done"));
-
+    rocket::ignite()
+        .attach(Template::fairing())
+        .mount("/", routes![
+            index,
+            index2,
+            post_pre_prompt,
+            post_do_command,
+            static_files::all,
+        ])
+        .launch();
 }
 
 fn exec(cmd: &str) -> String {
