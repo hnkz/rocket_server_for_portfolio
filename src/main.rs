@@ -26,12 +26,11 @@ fn index2() -> Template {
 }
 
 /**
- * Ajax
+ * Functions for Ajax
  */
 #[post("/api/ajax/post_pre_prompt")]
 fn post_pre_prompt() -> String {
     let hashmap = get_pre_prompt("guest".to_string(), "/".to_string());
-    //let pre_prompt = hashmap["user"] + ":" + hashmap["time"] + " " + hashmap["dir"] + " ";
     let user = hashmap.get("user").unwrap();
     let time = hashmap.get("time").unwrap();
     let dir = hashmap.get("dir").unwrap();
@@ -49,7 +48,7 @@ fn post_pre_prompt() -> String {
 
 #[post("/api/ajax/post_do_command", data="<cmd>")]
 fn post_exec(cmd: String) -> String {
-    println!("cmd is {}", cmd);
+    println!("cmd is {} ....", cmd);
 
     let mut res = exec(&cmd);
     res = res.replace("\n", "<br>");
