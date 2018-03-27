@@ -76,12 +76,7 @@ fn exec(cmd: &str) -> String {
         return "".to_string();
     }
 
-    // 文字列処理
-    let mut cmd_split = cmd.split_whitespace();
-
-    let program = cmd_split.next().unwrap();
-
-    let result = Command::new("bash")
+    let result = Command::new("rbash")
                             .arg("-c")
                             .arg(cmd)
                             .output();
