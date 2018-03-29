@@ -1,9 +1,12 @@
 <h2>HELP</h2>
 
 <h3>commands</h3>
-* ls        ... List directory contents
 * cat       ... Concatenate files and print on the standard output
+* grep      ... Print lines matching a pattern
+* printenv  ... Print all or part of environment
+* ls        ... List directory contents
 * pwd       ... Print name of current/working directory
+* which     ... Shows the full path of (shell) commands
 * whoami    ... Print effective userid
 
 <h3>files</h3>
