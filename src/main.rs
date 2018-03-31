@@ -3,7 +3,7 @@
 
 extern crate rocket;
 extern crate rocket_contrib;
-extern crate time;
+extern crate chrono;
 
 mod static_files;
 
@@ -107,12 +107,5 @@ fn get_pre_prompt<'a>(name: String, dir: String) -> HashMap<&'a str, String> {
 }
 
 fn get_time() -> String {
-    let now_tm = time::now().to_local();
-    let now_string = format!("{}:{}:{}",
-                             now_tm.tm_hour,
-                             now_tm.tm_min,
-                             now_tm.tm_sec
-    );
-
-    now_string
+    chrono::Local::now().format("%-H:%-M:%-S").to_string()
 }
